@@ -7,3 +7,6 @@ document.querySelectorAll(".nav-link").forEach((item) => {
     document.querySelector(".nav-items").classList.toggle("active");
   });
 });
+function cart(){
+
+}

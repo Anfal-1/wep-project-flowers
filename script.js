@@ -1,21 +1,10 @@
-function product(){
-  var Flower1=parseInt(document.getElementById("flower1").value);
-  var Flower2=parseInt(document.getElementById("flower2").value);
-  var Flower3=parseInt(document.getElementById("flower3").value);
-  var Flower4=parseInt(document.getElementById("flower4").value);
-  var result=0;
-  var act= document.getElementById("SelectActive").value;
-  if(act==="Red Rose"){
-    result=150;
-  }
-  else if(act==="White Tulips"){
-    result=190;
-  }
-  else if(act==="Rosy Love"){
-    result=200;
-  }
-  else if (act==="Red Baby Roses"){
-    result=250;
-  }
-    alert(document.getElementById("totalproduct").innerHTML=Math.round(result));
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const product = this.parentNode.querySelector('input[name="product"]').value;
+            alert(Added ${product} to cart!); // Replace this with your actual add to cart logic
+        });
+    });
+});

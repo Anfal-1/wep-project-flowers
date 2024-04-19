@@ -61,7 +61,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="add.php">Products</a></li>
-                <li><a href="chdisplay.php">Checkout</a></li>
+                
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="cart.php"><i class="fas fa-shopping-cart nav-cart-icon"></i></a></li>
             </ul>

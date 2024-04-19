@@ -23,9 +23,9 @@ if (isset($_POST['product'])) {
 $totalPrice = 0;
 foreach ($cartItems as $item) {
     // Check if the 'price' key exists in the $item array
-    if (isset($item['price'])) {
+    if (isset($item['price'])&& isset($item['quantity'])) {
         // Calculate the total price for each item
-        $totalPrice += $item['price'];
+        $totalPrice += $item['price'] * $item['quantity'];
     } else {
         echo 'Price not set for item: ' . $item['product'];
     }
@@ -41,9 +41,8 @@ foreach ($cartItems as $item) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>LARH - Cart</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -53,9 +52,9 @@ foreach ($cartItems as $item) {
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="add.php">Products</a></li>
-                <li><a href="chdisplay.php">Checkout</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="cart.php"><i class="fas fa-shopping-cart nav-cart-icon"></i></a></li>
+                
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -74,6 +73,8 @@ foreach ($cartItems as $item) {
             <?php endforeach; ?>
         </ul>
         <p>السعر الإجمالي: SAR <?php echo $totalPrice; ?></p>
+
+        <a href="chdisplay.php">Checkout<a>
     </main>
 
     <footer>
@@ -81,3 +82,4 @@ foreach ($cartItems as $item) {
     </footer>
 </body>
 </html>
+

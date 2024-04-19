@@ -1,0 +1,96 @@
+﻿header {
+    background-color: #f5c7d1;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #fff;
+}
+
+/* تنسيق قائمة التنقل */
+nav {
+    background-color: #f5c7d1;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff0066;
+}
+
+.nav-cart-icon {
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* تنسيق النص الرئيسي */
+main {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #ff0066;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* تنسيق الفوتر */
+footer {
+    background-color: #f5c7d1;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer p {
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+  }
+  
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+  }

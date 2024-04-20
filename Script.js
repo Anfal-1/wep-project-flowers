@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", function(event) {
       event.preventDefault();
       
-      // قم بإضافة رمز JavaScript هنا لعرض رسالة الشكر
+      // هنا لعرض رسالة الشكر
       displayThankYouMessage();
     });
   });

@@ -3,7 +3,7 @@ function displayWelcomeMessage() {
 }
 
 function displayThankYouMessage() {
-  alert("شكرًا لطلبك من متجرنا!");
+  alert("Thank you for ordering from our store!");
 }
 
 document.addEventListener("DOMContentLoaded", function() {

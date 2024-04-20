@@ -52,9 +52,8 @@ foreach ($cartItems as $item) {
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="add.php">Products</a></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart nav-cart-icon"></i></a></li>
-                
                 <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cart.php"><i class="fas fa-shopping-cart nav-cart-icon"></i></a></li>
             </ul>
         </nav>
     </header>

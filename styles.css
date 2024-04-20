@@ -19,7 +19,7 @@ h1 {
     color: #fff;
 }
 
-/* تنسيق قائمة التنقل */
+
 nav {
     background-color: #f5c7d1;
     padding: 10px 0;
@@ -54,7 +54,7 @@ nav ul li a:hover {
     margin-left: 5px;
 }
 
-/* تنسيق النص الرئيسي */
+
 main {
     background-color: #fff;
     padding: 40px;
@@ -73,7 +73,7 @@ p {
     line-height: 1.5;
 }
 
-/* تنسيق الفوتر */
+
 footer {
     background-color: #f5c7d1;
     padding: 20px;

@@ -1,4 +1,14 @@
-﻿header {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("file:///C:/Users/Reema/Pictures/Saved Pictures/flowers-.jpg"); ); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+header {
     background-color: #f5c7d1;
     padding: 20px;
     text-align: center;
@@ -84,13 +94,13 @@ footer p {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-  }
-  
-  .social-icons a {
+}
+
+.social-icons a {
     margin: 0 10px;
-  }
-  
-  .social-icons img {
+}
+
+.social-icons img {
     width: 40px;
     height: 40px;
-  }
+}

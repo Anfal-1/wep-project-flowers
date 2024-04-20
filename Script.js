@@ -1,16 +1,19 @@
 function displayWelcomeMessage() {
-    alert("Wlcome! to LARH ..");
+  alert("Welcome! to LARH ..");
 }
+
+function displayThankYouMessage() {
+  alert("شكرًا لطلبك من متجرنا!");
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("form");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      
-      // هنا لعرض رسالة الشكر
-      displayThankYouMessage();
-    });
+  // Assuming 'buyButton' is the id of your buying button
+  var buyButton = document.getElementById('buyButton');
+
+  buyButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    // Display thank you message
+    displayThankYouMessage();
   });
-  
-  function displayThankYouMessage() {
-    alert("شكرًا لطلبك من متجرنا!");
-  }
+});

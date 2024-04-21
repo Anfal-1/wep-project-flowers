@@ -7,19 +7,32 @@ if (isset($_POST['product'], $_POST['price'])) {
     $product = $_POST['product'];
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
-    // Use placeholders for values to prevent SQL injection
-    $addData = $database->prepare("INSERT INTO cart (product ,price ,quantity) VALUES (:product ,:price ,:quantity)");
-    
-    // Bind the parameters to the actual values
-    $addData->bindParam(':product', $product);
-    $addData->bindParam(':price', $price);
-    $addData->bindParam(':quantity', $quantity);
-    if ($addData->execute()) {
-        echo 'تم بنجاح اضافة بيانات';
+  // the customer id you're trying to use
+
+    // First, check if the customer id exists in the customer table
+   
+
+
+    if ($user) {
+        // If the customer exists, you can proceed with your insert/update operation
+        $addData = $database->prepare("INSERT INTO cart (product ,price ,quantity,customer_id) VALUES (:product ,:price ,:quantity )");
+        $addData->bindParam(':product', $product);
+        $addData->bindParam(':price', $price);
+        $addData->bindParam(':quantity', $quantity);
+       
+
+        if ($addData->execute()) {
+            echo 'تم بنجاح اضافة بيانات';
+        } else {
+            echo 'فشل اضافة بيانات';
+        }
     } else {
-        echo 'فشل اضافة بيانات';
+        // If the customer doesn't exist, handle the error
+        echo "Error: Customer ID does not exist.";
     }
 }
+
+
 
 
 ?>
@@ -28,17 +41,10 @@ if (isset($_POST['product'], $_POST['price'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <script src="script.js"></script> 
     <title>LARH - Products</title>
-        
-            <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>LARH - Cart</title>
 </head>
 <body>
     <script src="script.js"></script>
@@ -57,14 +63,18 @@ if (isset($_POST['product'], $_POST['price'])) {
     </header>
   
     <main>
+        <h2>first add your information before add product</h2>
+        <a href="chdisplay.php">add my information<a><br>
+
         <h2>Our Products</h2>
         <div class="product">
             <img src="Flower 1.jpg" alt="Flower 1" height="150" width="200">
             <h3>Red Roses</h3>
             <p>Price: SAR 150</p>
             <form method="post">
-            <input type="hidden" name="product" id="flower" value="Red Roses">
-            <input type="hidden" name="price" value="150">
+            <input type="hidden" name="product" id="product" value="Red Roses">
+            <input type="hidden" name="price" id="price" value="150">
+           
             <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
             <button class="add-to-cart-button" data-product-name="Red Roses" data-product-price="150">Add to Cart</button>
@@ -80,6 +90,7 @@ if (isset($_POST['product'], $_POST['price'])) {
             <input type="hidden" name="product"  id="flower"  value="White Tulips">
             <input type="hidden" id="price" name="price" value="190">
             <label for="quantity">Quantity:</label>
+        
         <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
             <button class="add-to-cart-button" data-product-name="White Tulips" data-product-price="190">Add to Cart</button>
 
@@ -110,7 +121,7 @@ if (isset($_POST['product'], $_POST['price'])) {
             <button class="add-to-cart-button" data-product-name="Red Baby Roses" data-product-price="250">Add to Cart</button>
             </form>
         </div>
-
+       <br><br><br><br><br><br><br>
     </main>
     
     <footer>
